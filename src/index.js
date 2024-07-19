@@ -1,5 +1,4 @@
-// import "normalize.css";
+import "normalize.css";
 import "./css/index.css";
 
-// Example usage
-console.log("Hello World");
+console.log("Hej");

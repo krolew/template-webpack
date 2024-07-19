@@ -1,11 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ESLintPlugin = require("eslint-webpack-plugin");
 const path = require("path");
 
 module.exports = {
   mode: "development",
   entry: {
-    index: "./src/index.js",
+    app: ["./src/index.js"],
   },
   output: {
     filename: "[name].bundle.js",
@@ -26,10 +25,6 @@ module.exports = {
       title: "",
       template: "./src/template.html",
     }),
-    new ESLintPlugin({
-      eslintPath: path.resolve(__dirname, "eslint.config.mjs"),
-      configType: "flat",
-    }),
   ],
   module: {
     rules: [
@@ -48,8 +43,3 @@ module.exports = {
     ],
   },
 };
-
-//   extensions: ["js"],
-//   configType: "flat",
-//   eslintPath: path.resolve(__dirname, "eslint.config.mjs"),
-//   emitWarning: true,
